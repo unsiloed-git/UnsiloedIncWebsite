@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unsiloed Inc Advisory</title>
+<meta name="description" content="Advising high-growth companies on sales and marketing transformation, monetisation, and AI-powered operations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --head:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --pad:clamp(20px,5vw,56px);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{background:#000;scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:#000;color:#fff;font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.dk{background:#000;color:#fff;--line:#333;--m:#a3a3a3;--bg:#000;--fg:#fff}
+.lt{background:#fff;color:#000;--line:#d4d4d4;--m:#6b6b6b;--bg:#fff;--fg:#000}
+.mute{color:var(--m)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--pad)}
+section{padding:72px 0}
+h1,h2,h3{font-family:var(--head);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin:0;line-height:1.1}
+h2{font-size:clamp(26px,6.4vw,48px);margin-bottom:40px}
+h3{font-size:clamp(15px,3.2vw,19px);letter-spacing:.08em}
+p{margin:0 0 1em;max-width:62ch}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad);max-width:1120px;margin:0 auto}
+.logo{display:block;width:84px;height:84px}
+.badge{display:block;width:132px;height:132px;margin-bottom:40px}
+.btn{display:inline-block;font:500 15px/1 var(--sans);text-decoration:none;padding:14px 22px;border:1px solid currentColor;border-radius:999px;transition:background .2s,color .2s}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.solid{background:var(--fg);color:var(--bg)}
+.btn.solid:hover{background:transparent;color:var(--fg)}
+
+.hero{padding:40px 0 88px}
+.hero h1{font-size:clamp(32px,10vw,100px);line-height:1.08;letter-spacing:.04em;font-weight:800;margin-bottom:40px}
+.hero .lede{font-size:clamp(19px,3.4vw,24px);line-height:1.4;max-width:34ch;margin-bottom:32px}
+.ceiling{height:6px;background:currentColor;margin-bottom:28px;transform-origin:left;animation:draw 1.1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.pillars{list-style:none;padding:0;margin:56px 0 0;border-top:1px solid currentColor}
+.pillars li{padding:20px 0;border-bottom:1px solid currentColor}
+.pillars b{font-family:var(--head);font-weight:700;font-size:16px;letter-spacing:.08em;text-transform:uppercase;display:block;line-height:1.2;margin-bottom:6px}
+
+.rows>*{border-top:1px solid var(--line);padding:28px 0}
+.rows>*:last-child{border-bottom:1px solid var(--line)}
+.rows h3{margin-bottom:10px}
+.rows p{margin:0}
+.list{list-style:none;padding:0;margin:14px 0 0}
+.list li{border-top:1px solid var(--line);padding:14px 0}
+.list li:last-child{border-bottom:1px solid var(--line)}
+.tag{font-weight:600;margin:0 0 4px}
+.sub{font-weight:600;font-size:19px;line-height:1.35;margin:0 0 8px}
+
+.tablist{display:flex;gap:8px;overflow-x:auto;margin-bottom:32px;padding-bottom:4px;scrollbar-width:none}
+.tablist::-webkit-scrollbar{display:none}
+.tablist button{all:unset;box-sizing:border-box;flex:none;cursor:pointer;font:500 15px/1 var(--sans);padding:12px 18px;border:1px solid currentColor;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s}
+.tablist button[aria-selected="true"]{background:var(--fg);color:var(--bg)}
+.tablist button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.panel{display:none}
+.panel.on{display:block}
+.panel h3{margin-bottom:10px}
+.raw{text-transform:none;letter-spacing:.02em}
+.dash{list-style:none;padding:0;margin:16px 0 0}
+.dash li{position:relative;padding-left:22px;margin:0 0 10px}
+.dash li::before{content:"\2013";position:absolute;left:0;color:var(--m)}
+.acc h3{margin:0}
+.acc button{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:20px;width:100%;cursor:pointer;font:inherit;text-transform:inherit;letter-spacing:inherit}
+.acc button::after{content:"+";font:400 28px/1 var(--sans);letter-spacing:0}
+.acc.open button::after{content:"\2212"}
+.acc button:focus-visible{outline:2px solid currentColor;outline-offset:6px}
+.acc p{display:none;margin-top:16px}
+.acc.open p{display:block}
+
+.about p.big{font-family:var(--head);font-weight:700;font-size:clamp(20px,4.2vw,30px);line-height:1.3;max-width:28ch;margin-bottom:28px}
+.stats{list-style:none;padding:0;margin:32px 0 0}
+.stats li{padding:12px 0;border-top:1px solid var(--line)}
+
+footer{padding:88px 0 48px}
+footer h2{font-size:clamp(28px,8vw,72px);margin-bottom:32px}
+.fine{margin-top:72px;font-size:14px}
+
+@media (min-width:820px){
+  section{padding:120px 0}
+  .split{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start}
+  .split>h2{margin-bottom:0;position:sticky;top:24px}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr)}
+  .pillars li{border-bottom:0;padding:24px 24px 0 0}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 160 160">
+    <circle cx="80" cy="80" r="80" fill="#fff"/>
+    <g fill="#000" font-family="Montserrat,Arial,sans-serif" font-weight="700" text-anchor="middle">
+      <text x="80" y="76" font-size="17" textLength="122" lengthAdjust="spacing">UNSILOED</text>
+      <rect x="18" y="83" width="124" height="2.5"/>
+      <text x="80" y="106" font-size="17" letter-spacing="6">INC.</text>
+    </g>
+  </symbol>
+</svg>
+
+<header class="dk" id="top">
+  <nav>
+    <a href="#top" aria-label="Unsiloed Inc"><svg class="logo" role="img" aria-label="Unsiloed Inc"><use href="#logo"/></svg></a>
+    <a class="btn" href="#contact">Get in touch</a>
+  </nav>
+  <div class="hero">
+    <div class="wrap">
+      <div class="ceiling" aria-hidden="true"></div>
+      <h1>Break your growth ceiling.</h1>
+      <p class="lede">Advising high-growth companies on sales and marketing transformation, monetisation, and AI-powered operations.</p>
+      <a class="btn solid" href="#contact">Start a conversation</a>
+    </div>
+  </div>
+</header>
+
+<section id="services" class="lt">
+  <div class="wrap split">
+    <h2>Services</h2>
+    <div class="rows">
+      <div class="acc open">
+        <h3><button type="button" aria-expanded="true">GTM transformation</button></h3>
+        <p class="mute">AI-native sales and marketing alignment, funnel architecture, monetisation, KPI redesign, revenue engines, founder coaching.</p>
+      </div>
+      <div class="acc">
+        <h3><button type="button" aria-expanded="false">Sales acceleration</button></h3>
+        <p class="mute">Sales effectiveness through sales motion improvements, sales upskilling, narrative building and commercial execution, with bespoke AI workflows.</p>
+      </div>
+      <div class="acc">
+        <h3><button type="button" aria-expanded="false">Marketing modernisation</button></h3>
+        <p class="mute">Performance marketing, retention, content strategy, brand narrative, creative ecosystems.</p>
+      </div>
+      <div class="acc">
+        <h3><button type="button" aria-expanded="false">Product and platform monetisation</button></h3>
+        <p class="mute">Design how platforms create, capture and scale value. From subscriptions and advertising to feature commercialisation and platform economics, we help organisations build monetisation strategies that drive adoption, increase revenue, and unlock growth.</p>
+      </div>
+      <div class="acc">
+        <h3><button type="button" aria-expanded="false">AI and tech-led growth</button></h3>
+        <p class="mute">MarTech, adtech and sales tech that solve real problems. CRM, CDP, automation, data governance (DPDP-ready), predictive modelling, operational efficiency, AI workflows.</p>
+      </div>
+      <div class="acc">
+        <h3><button type="button" aria-expanded="false">Fractional CGO engagements</button></h3>
+        <p class="mute">Leadership of revenue functions: sales and marketing, OKRs, hiring, operating rhythms, board reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="dk">
+  <div class="wrap split">
+    <h2>Case studies</h2>
+    <div class="tabs">
+      <div class="tablist" role="tablist" aria-label="Case studies">
+        <button type="button" role="tab" aria-selected="true">Disney+ Hotstar</button>
+        <button type="button" role="tab" aria-selected="false">Google</button>
+        <button type="button" role="tab" aria-selected="false">UnforgettableMomentsWithBabuji</button>
+        <button type="button" role="tab" aria-selected="false">Cox &amp; Kings</button>
+      </div>
+      <div class="panel on" role="tabpanel">
+        <h3>Disney+ Hotstar</h3>
+        <p class="tag mute">An ambitious first for subscriptions in India</p>
+        <ul class="dash">
+          <li>Led the GTM for India’s first sports pack, a paradigm shift for OTT in India</li>
+          <li>Built the always-on acquisition and retention engine</li>
+          <li>Accelerated the tech stack and media partnerships</li>
+          <li>Broke silos of marketing, product and ecosystem partnerships</li>
+        </ul>
+      </div>
+      <div class="panel" role="tabpanel">
+        <h3>Google</h3>
+        <p class="tag mute">B2B revenue acceleration</p>
+        <ul class="dash">
+          <li>Led compete wins: delivered 6X growth vs industry</li>
+          <li>Sales trainings and KPI setting: improved revenue per headcount across India, JAPAC and EMEA</li>
+          <li>Drove large-scale AI commercialisation: led India to global #1 in AI adoption</li>
+          <li>Transformed traditional retailers into digital businesses</li>
+          <li>Broke silos between internal teams, client teams, and bridged industry data with customer insights</li>
+        </ul>
+      </div>
+      <div class="panel" role="tabpanel">
+        <h3 class="raw">UnforgettableMomentsWithBabuji</h3>
+        <p class="tag mute">AI citations</p>
+        <ul class="dash">
+          <li>Delivered Human-X-AI agentic content GTM operations</li>
+          <li>Designed the tech stack: production, post-production and archives</li>
+          <li>AI Overviews and entity interpretation in 4 months, cited by ChatGPT and Gemini</li>
+          <li>Built the company brain, breaking silos between brand spine, content GTM and content distribution</li>
+        </ul>
+      </div>
+      <div class="panel" role="tabpanel">
+        <h3>Cox &amp; Kings / ezeego1</h3>
+        <p class="tag mute">Consumer revenue and brand</p>
+        <ul class="dash">
+          <li>Topline goals at 65% lower marketing budget</li>
+          <li>Generation change architected: 55% younger audience mix</li>
+          <li>Viral campaigns trending #1 for 3 days</li>
+          <li>Change management and digital transformation with promoters and CTO
+            <ul class="dash">
+              <li>Increased average revenue per user (ARPU): broke silos of marketing, sales, product and supply</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="lt">
+  <div class="wrap">
+    <h2>Growth isn’t linear.<br>It’s systemic.</h2>
+    <div class="rows">
+      <div class="two">
+        <h3>Systems over silos</h3>
+        <div>
+          <p class="sub">Map and integrate marketing, sales, product, data, and operations.</p>
+          <p class="mute">The next generation of growth depends on connection. Organisations built around isolated functions will struggle to keep pace as intelligence, decision-making and execution become intertwined. Integrated systems move faster, adapt more quickly, and scale more effectively.</p>
+        </div>
+      </div>
+      <div class="two">
+        <h3>Efficiency and growth</h3>
+        <div>
+          <p class="sub">Optimise the core. Enable the next.</p>
+          <p class="mute">Efficiency and growth are not competing priorities. The strongest operating models do both: they unlock efficiency in the core business and drive the big bets for the next wave of growth.</p>
+        </div>
+      </div>
+      <div class="two">
+        <h3>AI-native operations</h3>
+        <div>
+          <p class="sub">Build the engine, not the assembly line.</p>
+          <p class="mute">AI is not a feature to layer onto existing workflows. It changes how organisations create, distribute, and capture value. Success depends on leadership’s ability to keep the entire GTM engine aligned around shared goals, priorities, and outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="partner" class="dk">
+  <div class="wrap">
+    <h2>Partner with us</h2>
+    <div class="two">
+      <div>
+        <h3>Engagement models</h3>
+        <ul class="list">
+          <li>Advisory retainer</li>
+          <li>Project-based (GTM, martech / sales tech, revenue engine)</li>
+          <li>Fractional CMO</li>
+          <li>Founder strategy sessions</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What founders get</h3>
+        <ul class="list">
+          <li>Clear GTM direction</li>
+          <li>Faster commercial decisions</li>
+          <li>An AI-first, modernised sales and marketing engine</li>
+          <li>Reduced firefighting</li>
+          <li>Sustainable, scalable growth</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="lt">
+  <div class="wrap split">
+    <h2>About Charisma</h2>
+    <div>
+      <p class="big">A systems-lens GTM leader who sees what others miss.</p>
+      <p class="mute">As AI reshapes how organisations create and capture value, competitive advantage increasingly emerges at the intersection of domains. Charisma Murari brings marketing fluency, sales leadership, technical depth, and operational expertise from Google, Hotstar, Cox &amp; Kings, and more, connecting disciplines that are often managed in isolation to build durable growth engines.</p>
+      <ul class="stats">
+        <li>Delivered 6X revenue growth vs industry benchmarks</li>
+        <li>Led Google India to #1 worldwide in AI adoption</li>
+        <li>Built subscription engines and lifecycle programmes</li>
+        <li>Unified marketing and sales workflows</li>
+        <li>Modernised martech and adtech stacks</li>
+        <li>Broke scale barriers for founders</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer id="contact" class="dk">
+  <div class="wrap">
+    <svg class="badge" role="img" aria-label="Unsiloed Inc"><use href="#logo"/></svg>
+    <h2>Let’s break your ceiling.</h2>
+    <a class="btn solid" href="mailto:hello@example.com">Email us</a>
+    <p class="fine mute">© 2026 Unsiloed Inc</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.acc button').forEach(function(b){b.addEventListener('click',function(){var a=b.closest('.acc');var o=a.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});});
+document.querySelectorAll('.tablist button').forEach(function(b,i){b.addEventListener('click',function(){document.querySelectorAll('.tablist button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false');});document.querySelectorAll('.panel').forEach(function(p,j){p.classList.toggle('on',j===i);});});});
+</script>
+</body>
+</html>
